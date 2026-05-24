@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Website</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        nav{
+            background:#333;
+            color:white;
+            padding:15px;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .hero{
+            height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            background:linear-gradient(45deg,#007bff,#00d4ff);
+            color:white;
+            text-align:center;
+        }
+
+        .hero h1{
+            font-size:50px;
+        }
+
+        .hero p{
+            margin:20px;
+        }
+
+        button{
+            padding:12px 25px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            background:white;
+            color:#007bff;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#ddd;
+        }
+
+        @media(max-width:768px){
+            .hero h1{
+                font-size:35px;
+            }
+
+            nav{
+                flex-direction:column;
+                text-align:center;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<nav>
+    <h2>My Website</h2>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Dynamic Website</h1>
+    <p>HTML + CSS in one file</p>
+
+    <button onclick="changeText()">
+        Click Me
+    </button>
+
+    <h2 id="msg"></h2>
+</section>
+
+
+<script>
+function changeText(){
+    document.getElementById("msg").innerHTML =
+    "Button clicked!";
+}
+</script>
+
+</body>
+</html>
