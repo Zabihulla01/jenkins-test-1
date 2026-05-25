@@ -1,86 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dynamic Website</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4f4f4;
+background:#f4f4f4;
 }
 
+/* Navbar */
+
 nav{
-    background:#000;
-    color:white;
-    padding:15px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+background:#111;
+color:white;
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 nav ul{
-    display:flex;
-    list-style:none;
-    gap:20px;
+display:flex;
+gap:25px;
+list-style:none;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
+text-decoration:none;
+color:white;
 }
 
+nav a:hover{
+color:#00d4ff;
+}
+
+/* Hero */
+
 .hero{
-    height:90vh;
-    background:linear-gradient(
-        45deg,
-        #007bff,
-        #00d4ff
-    );
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    color:white;
-    text-align:center;
+height:100vh;
+background:
+linear-gradient(
+135deg,
+#007bff,
+#00d4ff
+);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+padding:20px;
 }
 
 .hero h1{
-    font-size:55px;
-    margin-bottom:20px;
+font-size:55px;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:30px;
+font-size:20px;
+margin-bottom:30px;
 }
 
 button{
-    padding:12px 30px;
-    border:none;
-    background:white;
-    color:#007bff;
-    font-size:18px;
-    cursor:pointer;
-    border-radius:5px;
+padding:15px 30px;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#007bff;
+transition:.3s;
 }
 
 button:hover{
-    background:#000;
-    color:white;
+background:black;
+color:white;
 }
+
+
+/* Cards */
+
+.container{
+padding:50px;
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:25px;
+width:250px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+
+/* Footer */
+
+footer{
+background:black;
+color:white;
+padding:20px;
+text-align:center;
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <nav>
-<h2>My Website</h2>
+
+<h2>DynamicSite</h2>
 
 <ul>
 <li><a href="#">Home</a></li>
@@ -88,35 +143,103 @@ button:hover{
 <li><a href="#">Services</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
+
 </nav>
+
 
 
 <section class="hero">
 
 <h1 id="title">
-Welcome To My Website
+Build Dynamic Websites
 </h1>
 
-<p>
-Dynamic HTML + CSS + JavaScript
+<p id="text">
+HTML + CSS + JavaScript
 </p>
 
-<button onclick="changeText()">
-Click Me
+<button onclick="changeContent()">
+Explore
 </button>
 
 </section>
 
 
+
+<section class="container">
+
+<div class="card">
+<h2>HTML</h2>
+<p>Structure websites</p>
+</div>
+
+<div class="card">
+<h2>CSS</h2>
+<p>Design websites</p>
+</div>
+
+<div class="card">
+<h2>JavaScript</h2>
+<p>Make websites dynamic</p>
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 Dynamic Website
+</p>
+
+</footer>
+
+
+
 <script>
 
-function changeText(){
+function changeContent(){
 
 document.getElementById("title")
 .innerHTML =
-"🚀 Website Updated Successfully";
+"🚀 Welcome Developer";
+
+document.getElementById("text")
+.innerHTML =
+"Learning Full Stack Development";
+
+document.body.style.background =
+"#e8f5ff";
 
 }
+
+
+// Auto changing text
+
+let messages = [
+"Learn HTML",
+"Learn CSS",
+"Learn JavaScript",
+"Become Developer"
+];
+
+let i = 0;
+
+setInterval(()=>{
+
+document.getElementById("text")
+.innerHTML =
+messages[i];
+
+i++;
+
+if(i>=messages.length){
+i=0;
+}
+
+},2000);
+
 
 </script>
 
